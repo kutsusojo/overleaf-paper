@@ -1,0 +1,247 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PASJ LaTeX template for draft(body) <2024/07/01> 
+%%% 
+%%% IMPORTANT NOTICE FOR AUTHORS 
+%%%  1. Do NOT use \def/\renewcommand. 
+%%%  2. Do NOT redefine commands provided by PASJ02.cls.   
+%%%  3. LETTER article must NOT exceed ``six pages'' in length in PASJ's publication layout format. 
+%%%    Do NOT change the default font setting of pasj02.cls to avoid obtaining an inaccurate page estimation. 
+%%%  4. ``\draft'' creates single column and double spaces format. 
+%%%     
+%%% Instructions to authors: https://academic.oup.com/pasj/pages/General_Instructions
+%%% Author's guide (in Japanese): https://www.asj.or.jp/pasj/guide/ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[]{pasj02} 
+%\draft
+\usepackage[switch,mathlines]{lineno} % add line number to manuscript
+%\usepackage{natbib} 
+
+\jyear{2024}
+\Received{}%{yyyy/mm/dd}
+\Accepted{}%{yyyy/mm/dd}
+%\Published{yyyy/mm/dd}
+
+%\graphicspath{{./}{figures/}} 
+
+\begin{document} 
+
+\title{ Title of Your Paper }
+
+%%% begin:list of authors
+% Do NOT capitalize all letters in "textsc".
+\author{
+ A-Firstname \textsc{A-Familyname},\altaffilmark{1}\altemailmark\orcid{0000-0000-0000-0000} \email{aaaaa@xxx.xxx.xx.xx} 
+ B-Firstname \textsc{B-Familyname},\altaffilmark{2}$^{,\dag}$\orcid{0000-0000-0000-0000}
+ C-Firstname \textsc{C-Familyname},\altaffilmark{3}\altemailmark \email{ccccc@xxx.xxx.xx.xx}
+ and 
+ D-Firstname \textsc{D-Familyname}\altaffilmark{2}\altemailmark\orcid{0000-0000-0000-0000} \email{ddddd@xxx.xxx.xx.xx}
+}
+\altaffiltext{1}{A-Address of Institute}
+\altaffiltext{2}{B-Address of Institute}
+\altaffiltext{3}{C-Address of Institute}
+
+\footnotetext[$\dag$]{Present address: ....}
+
+%%% end:list of authors
+
+%% !!! Select 3 to 5 words from PASJ's key words !!! 
+%% List of Key Words: https://academic.oup.com/pasj/pages/Pasj_Keywords 
+%% "\KeyWords{ }" always has to be placed before ``\maketitle'' 
+\KeyWords{xxxx: xxxx --- ......}  
+
+\maketitle
+
+\begin{abstract}
+Please read ``IMPORTANT NOTICE'' carefully before preparing a manuscript.  
+\end{abstract}
+
+\pagewiselinenumbers 
+
+\section{Introduction}
+
+\noindent IMPORTANT NOTICE\\
+1. Manuscript for submission must be in the same format as a published papers. \\
+2. Line numbers should be added to the manuscript. \\
+3. Do NOT use ``\verb|\def|, \verb|\renewcommand|''.\\
+4. Do NOT redefine commands provided by pasj02.cls.  
+
+
+\section{Section 2}\label{sec:2}
+
+ Use \verb/\timeform{ }/ for celestial coordinates as shown in the example below.
+
+ (RA, Dec)$_{\rm J2000.0}$ = (\timeform{1h23m45.67s}, \timeform{6D54'32.1''})
+ 
+
+\subsection{Subsection}\label{ssec:21}
+
+In the theory \citep{key-2} .......... 
+\citet{key-5} found .......... 
+
+
+\subsubsection{Subsubsection}\label{sssec:211}
+
+The normal order of delimiters is parentheses ( ), brackets [ ], braces \{ \}, as follows:
+\begin{eqnarray}
+ \alpha = \left\{ [10^2 F(\beta)] \left[ \frac{3h}{1-(1+z)} \right]^2  \right\} . 
+\end{eqnarray}
+
+
+\section{Section3}\label{sec:3}
+
+Figure captions should always begin with a declarative title, followed by a brief description (see figure \ref{fig:sample}). 
+In each table, a declarative title should be given in \verb/\tbl{ }/ or \verb/\caption{ }/. 
+Any notes applying to the table and specific parts appear immediately below the table with symbols.   
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{figure}
+ \begin{center}
+  %\includegraphics[width=8cm]{fig1.eps} 
+ \end{center}
+\caption{ Declarative title of figure. Give a brief description to understand the figure.  
+ {Alt text: Line graph... } 
+}\label{fig:sample}
+\end{figure}
+% See the instraction below for "Alt text"
+% https://academic.oup.com/pasj/pages/General_Instructions#Figures%20and%20Illustrations
+
+\begin{table}
+  \tbl{First tabular.\footnotemark[$*$] }{%
+  \begin{tabular}{cccc}
+      \hline
+      Name & Value1 & Value2 & Value3\footnotemark[$\dag$]  \\ 
+      \hline
+      aaa & bbb & ccc & ddd \\
+      eee & fff & ggg & hhh \\
+      ....\\
+      \hline
+    \end{tabular}}\label{tab:first}
+\begin{tabnote}
+\footnotemark[$*$] Brief explanation of this table.  \\ 
+\footnotemark[$\dag$] Explanation of value 3. 
+%\footnotemark[$\ddag$]  ... \\ 
+%\footnotemark[$\S$]  ... \\ 
+%\footnotemark[$\|$]  ... \\
+%\footnotemark[$\sharp$]  ... \\  
+%\footnotemark[$**$]  ... \\ 
+%\footnotemark[$\dag\dag$]  ... \\ 
+\end{tabnote}
+\end{table}
+
+\begin{longtable}{cccc}
+  \caption{Sample of ``longtable.'' }\label{tab:LTsample}  
+\hline\noalign{\vskip3pt} 
+  Name & Value1 & Value2 & Value3\footnotemark[$*$] \\   [2pt] 
+\hline\noalign{\vskip3pt} 
+\endfirsthead      
+\hline\noalign{\vskip3pt} 
+  Name & Value1 & Value2 & Value3 \\  [2pt] 
+\hline\noalign{\vskip3pt} 
+\endhead
+\hline\noalign{\vskip3pt} 
+\endfoot
+\hline\noalign{\vskip3pt} 
+\multicolumn{2}{@{}l@{}}{\hbox to0pt{\parbox{160mm}{\footnotesize
+\hangindent6pt\noindent
+\hbox to6pt{\footnotemark[$*$]\hss}\unskip% 
+  Brief explanation of value3. 
+}\hss}} 
+\endlastfoot 
+  aaaaa & bbbbb & ccccc & ddddd \\
+  ...... & ..... & ..... & ..... \\
+  ...... & ..... & ..... & ..... \\
+  ...... & ..... & ..... & ..... \\ 
+  wwwww & xxxxx & yyyyy & zzzzz \\
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section*{Supplementary data} 
+
+The following supplementary data is available at PASJ online.
+
+E-table 1  
+
+
+\begin{ack}
+Acknowledgement should be placed at end of main text.
+(NOT after the Appendix.)
+\end{ack}
+
+\section*{Funding}
+ This research was supported by ...
+
+\section*{Data availability} 
+ The data underlying this article are available ...  
+% Sample Data Availability Statements 
+% https://academic.oup.com/pages/open-research/research-data#Data%20Availability%20Statements
+
+
+\appendix %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Case of single paragraph}
+ No section number is necessary. Add ``*'' after \verb/\section/.
+
+%%%% 
+\section{Case of two or more paragraphs}
+
+ Text of appendix
+
+\section{Case of two or more paragraphs}
+
+ Text of appendix
+
+
+% Any journal's BST file (e.g., apj.bst) can be used as PASJ's BST is unavailable.    
+% \bibliographystyle{****}
+% \bibliography{****}
+\begin{thebibliography}{}
+% Journals(e.g. A\&A,ApJ,AJ,NMRAS,PASP ...)
+% Authors, Year, Journal, Vol#, Page# 
+\bibitem[Aauthor et al.(2001)]{key-1}
+  Aauthor, A., Bauthor, B., \& Cauthor, C.\ 2001, PASJ, 53, 000 
+\bibitem[Aauthor \& Bauthor(2003a)]{key-2}
+  Aauthor, A., \& Bauthor, B.\ 2003a, PASJ, 55, 000 
+\bibitem[Aauthor \& Bauthor(2003b)]{key-3}
+  Aauthor, A., \& Bauthor, B.\ 2003b, PASJ, 55, 000 
+\bibitem[Aauthor, Cauthor, and Dauthor(2000)]{key-3}
+  Aauthor, A., Cauthor, C., \& Dauthor, D.\ 2000, PASJ, vol, page   
+% Books
+\bibitem[Aauthor \& Eauthor(2003b)]{key-4}
+  Aauthor, A., \& Euthor, E.\ 2003b, Name of Book (Tokyo: Publisher) ch.0    
+% Editorial Books
+\bibitem[Dauthor(2001)]{key-5}
+  Dauthor A.~A.\ 2001, in Name of Book, ed.\  D.~Editor (Tokyo: Publisher), 00 
+\end{thebibliography}
+
+\end{document}
+
+=== Frequently used abbreviation of journal names === 
+\aj         AJ
+\araa       ARA\&A
+\apj        ApJ
+\apjl       ApJL
+\apjs       ApJS 
+\apss       Ap\&SS
+\aap        A\&A
+\aapr       A\&AR
+\aaps       A\&AS 
+\baas       BAAS
+\icarus     ICARUS 
+\mnras      MNRAS 
+\prd        Phys.\ Rev.\ D 
+\prl        Phys.\ Rev.\ Lett.
+\pasp       PASP
+\pasj       PASJ 
+\solphys    Sol.\ Phys. 
+\ssr        Space\ Sci.\ Rev. 
+\nat        Nature
+\iaucirc    IAU\ Circ. 
+\gca        Geochim.\ Cosmochim.\ Acta 
+\jgr        J.\ Geophys.\ Res.  
+\nphysa     Nucl.\ Phys.\ A 
+\procspie   Proc.\ SPIE
+\aip        AIP Conf.\ Proc.
+\asp        ASP Conf.\ Ser. 
+=====================================================
